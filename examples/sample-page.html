@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Harbour Dental - Mobile CTA Demo</title>
+    <style>
+      :root { color: #172027; background: #f7f7f2; font-family: Arial, Helvetica, sans-serif; }
+      * { box-sizing: border-box; }
+
+      body { margin: 0; background: linear-gradient(135deg, rgba(0, 118, 142, 0.14), transparent 30rem), #f7f7f2; }
+      a { color: inherit; }
+
+      .site-header, .hero, .trust-row, .contact-section { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+
+      .site-header { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 20px 0; }
+      .brand { font-weight: 800; }
+
+      .nav-actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+
+      .btn {
+        display: inline-flex;
+        min-height: 48px;
+        border: 0;
+        border-radius: 8px;
+        padding: 14px 18px;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        color: #172027;
+        font-weight: 800;
+        text-decoration: none;
+        box-shadow: inset 0 0 0 1px rgba(23, 32, 39, 0.13);
+      }
+
+      .primary-cta, .booking-cta, .form-submit { background: #006f86; color: #ffffff; box-shadow: none; }
+
+      .secondary-cta {
+        background: #f2ba49;
+        color: #1b1a13;
+        box-shadow: none;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+        gap: 28px;
+        align-items: center;
+        padding: 42px 0 24px;
+      }
+
+      .hero h1 {
+        max-width: 720px;
+        margin: 0 0 16px;
+        font-size: clamp(2.1rem, 5.5vw, 4.5rem);
+        line-height: 0.98;
+      }
+
+      .hero p {
+        max-width: 620px;
+        margin: 0 0 22px;
+        color: #4b5961;
+        font-size: 1.08rem;
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .clinic-card {
+        border: 1px solid rgba(23, 32, 39, 0.12);
+        border-radius: 8px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 20px 60px rgba(23, 32, 39, 0.11);
+      }
+
+      .clinic-photo {
+        min-height: 220px;
+        background: linear-gradient(145deg, #d9eee9, #fff6dc 45%, #b7d9e2);
+      }
+
+      .clinic-card dl {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0;
+        border-top: 1px solid rgba(23, 32, 39, 0.1);
+      }
+
+      .clinic-card div {
+        padding: 16px;
+      }
+
+      .clinic-card dt {
+        color: #607078;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+      }
+
+      .clinic-card dd {
+        margin: 6px 0 0;
+        font-weight: 800;
+      }
+
+      .trust-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        padding: 16px 0 32px;
+      }
+
+      .trust-row article,
+      .contact-section {
+        border: 1px solid rgba(23, 32, 39, 0.12);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .trust-row article {
+        padding: 18px;
+      }
+
+      .trust-row h2,
+      .contact-section h2 {
+        margin: 0 0 8px;
+        font-size: 1rem;
+      }
+
+      .trust-row p,
+      .contact-section p {
+        margin: 0;
+        color: #52636b;
+        line-height: 1.5;
+      }
+
+      .contact-section {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(280px, 1fr);
+        gap: 24px;
+        margin-bottom: 96px;
+        padding: 24px;
+      }
+
+      form {
+        display: grid;
+        gap: 14px;
+      }
+
+      label {
+        display: grid;
+        gap: 6px;
+        font-weight: 700;
+      }
+
+      input {
+        min-height: 46px;
+        border: 1px solid rgba(23, 32, 39, 0.18);
+        border-radius: 8px;
+        padding: 10px 12px;
+        font: inherit;
+      }
+
+      @media (max-width: 720px) {
+        .site-header,
+        .hero,
+        .contact-section {
+          grid-template-columns: 1fr;
+        }
+
+        .site-header {
+          display: grid;
+        }
+
+        .nav-actions,
+        .hero-actions {
+          display: grid;
+          grid-template-columns: 1fr;
+        }
+
+        .trust-row,
+        .clinic-card dl {
+          grid-template-columns: 1fr;
+        }
+
+        .mobile-call-bar {
+          position: fixed;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          min-height: 56px;
+          border-radius: 0;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand">Harbour Lane Dental</div>
+      <nav class="nav-actions" aria-label="Primary actions">
+        <a class="btn primary-cta" href="/appointments?utm_source=google&amp;gclid=sample-click">Book emergency visit</a>
+        <a class="btn secondary-cta" href="tel:+15550101888" aria-label="Call Harbour Lane Dental">Call now</a>
+        <a class="btn directions-link" href="https://maps.google.com/?q=100+Main+Street">Directions</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Same-day dental care when a tooth cannot wait.</h1>
+          <p>
+            Local emergency appointments, transparent treatment plans, and a front desk
+            that keeps your booking source intact for campaign QA.
+          </p>
+          <div class="hero-actions">
+            <a class="btn booking-cta" href="/book?utm_source=google&amp;gclid=sample-click">Book online</a>
+            <a class="btn secondary-cta" href="tel:+15550101888">Speak to reception</a>
+          </div>
+        </div>
+
+        <aside class="clinic-card" aria-label="Clinic snapshot">
+          <div class="clinic-photo" role="img" aria-label="Bright reception area at Harbour Lane Dental"></div>
+          <dl>
+            <div>
+              <dt>Open today</dt>
+              <dd>8am-6pm</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>100 Main Street</dd>
+            </div>
+            <div>
+              <dt>Call</dt>
+              <dd>555 010 1888</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <section class="trust-row" aria-label="Patient assurances">
+        <article>
+          <h2>Emergency gaps held daily</h2>
+          <p>Reserved appointment blocks for pain, swelling, cracks, and lost fillings.</p>
+        </article>
+        <article>
+          <h2>Clear next steps</h2>
+          <p>Every visit includes diagnosis, fee range, and treatment options before work starts.</p>
+        </article>
+        <article>
+          <h2>Campaign QA sample</h2>
+          <p>The Directions link intentionally drops tracking parameters so reports show a real fix.</p>
+        </article>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div>
+          <h2>Ask for a callback</h2>
+          <p>
+            The form includes hidden UTM and click-ID fields, making it useful for
+            checking whether mobile lead paths preserve paid-search attribution.
+          </p>
+        </div>
+        <form action="/lead-capture" method="post">
+          <input type="hidden" name="utm_source" value="google">
+          <input type="hidden" name="gclid" value="sample-click">
+          <label>
+            Name
+            <input name="name" autocomplete="name">
+          </label>
+          <label>
+            Phone
+            <input name="phone" autocomplete="tel">
+          </label>
+          <button class="btn form-submit" type="submit">Request callback</button>
+        </form>
+      </section>
+    </main>
+
+    <footer
+      class="qa-footer"
+      style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;width:min(1120px,calc(100% - 32px));margin:-62px auto 96px;border-top:1px solid rgba(23,32,39,0.13);padding-top:18px;color:#607078;font-size:0.9rem;"
+    >
+      <span>Demo fixture for the AdPages Mobile CTA Checker.</span>
+      <span>Built by <a href="https://a1local.com.au/extensions/" target="_blank" rel="noopener" style="color:#006f86;font-weight:800;">AdPages from A1 Local</a>.</span>
+    </footer>
+
+    <a class="mobile-call-bar btn secondary-cta" href="tel:+15550101888">Tap to call reception</a>
+  </body>
+</html>

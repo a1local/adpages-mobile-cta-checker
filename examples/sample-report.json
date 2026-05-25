@@ -1,0 +1,260 @@
+{
+  "tool": "adpages-mobile-cta-checker",
+  "version": "0.1.0",
+  "generatedAt": "2026-05-25T02:35:01.546Z",
+  "input": {
+    "finalUrl": "https://example.com/?utm_source=google&gclid=sample-click",
+    "requiredParams": [
+      "utm_source",
+      "gclid"
+    ],
+    "htmlCharacters": 8360
+  },
+  "score": 85,
+  "grade": "B",
+  "summary": "1 major mobile CTA issue should be fixed before launch.",
+  "signals": {
+    "aboveFold": {
+      "characterLimitUsed": 5000,
+      "likelyCtaCount": 2,
+      "ctas": [
+        {
+          "label": "Book emergency visit",
+          "tag": "a",
+          "href": "/appointments?utm_source=google&gclid=sample-click",
+          "intent": "booking",
+          "aboveFold": true,
+          "sticky": false,
+          "mobileHint": false,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": [
+            "utm_source",
+            "gclid"
+          ]
+        },
+        {
+          "label": "Call Harbour Lane Dental",
+          "tag": "a",
+          "href": "tel:+15550101888",
+          "intent": "phone",
+          "aboveFold": true,
+          "sticky": false,
+          "mobileHint": false,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        }
+      ]
+    },
+    "stickyMobile": {
+      "hasStickyOrMobileCta": true,
+      "candidates": [
+        {
+          "label": "Tap to call reception",
+          "tag": "a",
+          "href": "tel:+15550101888",
+          "intent": "phone",
+          "aboveFold": false,
+          "sticky": true,
+          "mobileHint": true,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        }
+      ],
+      "cssHints": [
+        "mobile_media_cta_rule",
+        "sticky_cta_css_rule"
+      ]
+    },
+    "tapTargets": {
+      "checked": 7,
+      "warnings": []
+    },
+    "phone": {
+      "telLinks": [
+        {
+          "label": "Call Harbour Lane Dental",
+          "tag": "a",
+          "href": "tel:+15550101888",
+          "intent": "phone",
+          "aboveFold": true,
+          "sticky": false,
+          "mobileHint": false,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        },
+        {
+          "label": "Speak to reception",
+          "tag": "a",
+          "href": "tel:+15550101888",
+          "intent": "phone",
+          "aboveFold": false,
+          "sticky": false,
+          "mobileHint": false,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        },
+        {
+          "label": "Tap to call reception",
+          "tag": "a",
+          "href": "tel:+15550101888",
+          "intent": "phone",
+          "aboveFold": false,
+          "sticky": true,
+          "mobileHint": true,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        }
+      ],
+      "phoneIntentCtas": [
+        {
+          "label": "Call Harbour Lane Dental",
+          "tag": "a",
+          "href": "tel:+15550101888",
+          "intent": "phone",
+          "aboveFold": true,
+          "sticky": false,
+          "mobileHint": false,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        },
+        {
+          "label": "Speak to reception",
+          "tag": "a",
+          "href": "tel:+15550101888",
+          "intent": "phone",
+          "aboveFold": false,
+          "sticky": false,
+          "mobileHint": false,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        },
+        {
+          "label": "Request callback",
+          "tag": "button",
+          "href": null,
+          "intent": "phone",
+          "aboveFold": false,
+          "sticky": false,
+          "mobileHint": false,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        },
+        {
+          "label": "Tap to call reception",
+          "tag": "a",
+          "href": "tel:+15550101888",
+          "intent": "phone",
+          "aboveFold": false,
+          "sticky": true,
+          "mobileHint": true,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        }
+      ],
+      "phoneTextMatches": [
+        "555 010 1888"
+      ],
+      "hasPhoneTextWithoutTelLink": false
+    },
+    "forms": {
+      "count": 1,
+      "findings": [],
+      "forms": [
+        {
+          "action": "/lead-capture",
+          "method": "post",
+          "hasSubmit": true,
+          "hiddenTrackingFields": [
+            "utm_source",
+            "gclid"
+          ]
+        }
+      ]
+    },
+    "location": {
+      "ctaCount": 1,
+      "ctas": [
+        {
+          "label": "Directions",
+          "tag": "a",
+          "href": "https://maps.google.com/?q=100+Main+Street",
+          "intent": "location",
+          "aboveFold": false,
+          "sticky": false,
+          "mobileHint": false,
+          "tapTargetSizeHint": true,
+          "trackingParamsPresent": []
+        }
+      ],
+      "addressSignals": [
+        "100 Main Street"
+      ]
+    },
+    "trackingPreservation": {
+      "status": "attention",
+      "requiredParams": [
+        "utm_source",
+        "gclid"
+      ],
+      "checkedLinks": 3,
+      "preservingLinks": [
+        {
+          "label": "Book emergency visit",
+          "href": "/appointments?utm_source=google&gclid=sample-click",
+          "params": [
+            "utm_source",
+            "gclid"
+          ]
+        },
+        {
+          "label": "Book online",
+          "href": "/book?utm_source=google&gclid=sample-click",
+          "params": [
+            "utm_source",
+            "gclid"
+          ]
+        }
+      ],
+      "missingLinks": [
+        {
+          "label": "Directions",
+          "href": "https://maps.google.com/?q=100+Main+Street",
+          "missingParams": [
+            "utm_source",
+            "gclid"
+          ]
+        }
+      ],
+      "formCoverage": [
+        "utm_source",
+        "gclid"
+      ],
+      "note": "Hidden form fields preserve at least one required tracking parameter."
+    },
+    "competingPrimaryCtas": {
+      "primaryCount": 2,
+      "uniqueIntents": [
+        "booking",
+        "phone"
+      ],
+      "labels": [
+        "Book emergency visit",
+        "Call Harbour Lane Dental"
+      ],
+      "hasCompetingPrimaries": false,
+      "note": "Primary CTA set is reasonably focused."
+    }
+  },
+  "issues": [
+    {
+      "severity": "major",
+      "code": "tracking_params_not_preserved",
+      "message": "One or more CTA links do not preserve required tracking parameters.",
+      "evidence": "Directions: utm_source, gclid",
+      "remediation": "Carry click IDs and required UTM parameters into booking/contact links or matching hidden form fields."
+    }
+  ],
+  "recommendations": [
+    "Preserve required UTM and click-ID parameters across CTA links and forms."
+  ]
+}

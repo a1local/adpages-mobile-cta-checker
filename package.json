@@ -1,0 +1,49 @@
+{
+  "name": "@adpages/mobile-cta-checker",
+  "version": "0.1.0",
+  "description": "Dependency-free CLI for checking saved local-business HTML for mobile CTA, tap target, and tracking preservation issues.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://a1local.com.au/extensions/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a1local/adpages-mobile-cta-checker.git"
+  },
+  "bugs": {
+    "url": "https://a1local.com.au/extensions/support/"
+  },
+  "sideEffects": false,
+  "main": "./src/index.mjs",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
+  "bin": {
+    "adpages-mobile-cta-checker": "./bin/adpages-mobile-cta-checker.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "PRIVACY.md",
+    "PUBLISH_BLOCKERS.md"
+  ],
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "sample": "node bin/adpages-mobile-cta-checker.mjs --html-file examples/sample-page.html --final-url https://example.com/?utm_source=google&gclid=sample-click --required-param utm_source --required-param gclid",
+    "sample:text": "node bin/adpages-mobile-cta-checker.mjs --html-file examples/sample-page.html --final-url https://example.com/?utm_source=google&gclid=sample-click --required-param utm_source --required-param gclid --format text",
+    "pack:dry-run": "npm pack --dry-run",
+    "prepublishOnly": "npm run check && npm run smoke"
+  },
+  "keywords": [
+    "mobile-cta",
+    "local-seo",
+    "landing-page",
+    "website-audit",
+    "tap-targets",
+    "utm",
+    "agency"
+  ]
+}
